@@ -1,0 +1,66 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Ninio</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ entity.nombre }}</td>
+            </tr>
+            <tr>
+                <th>Appaterno</th>
+                <td>{{ entity.apPaterno }}</td>
+            </tr>
+            <tr>
+                <th>Apmaterno</th>
+                <td>{{ entity.apMaterno }}</td>
+            </tr>
+            <tr>
+                <th>Fechanacimiento</th>
+                <td>{{ entity.fechaNacimiento|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Colegio</th>
+                <td>{{ entity.colegio }}</td>
+            </tr>
+            <tr>
+                <th>Celular</th>
+                <td>{{ entity.celular }}</td>
+            </tr>
+            <tr>
+                <th>Rut</th>
+                <td>{{ entity.rut }}</td>
+            </tr>
+            <tr>
+                <th>Dv</th>
+                <td>{{ entity.dv }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('ninio') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('ninio_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('ninio_delete', { 'id': entity.id }) }}" method="post">
+            <input type="hidden" name="_method" value="DELETE" />
+            {{ form_widget(delete_form) }}
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+</ul>
+{% endblock %}
