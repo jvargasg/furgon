@@ -15,15 +15,24 @@ class ApoderadoType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nombres')
-            ->add('apPaterno')
-            ->add('apMaterno')
-            ->add('rut')
-            ->add('dv')
-            ->add('direccion')
-            ->add('telefono')
-            ->add('celular')
-            ->add('mail');
+            ->add('nombres','text',array(
+                'label' => 'Nombre'))
+            ->add('apPaterno','text',array(
+                'label' => 'Apellido paterno'))
+            ->add('apMaterno','text',array(
+                'label' => 'Apellido Materno'))
+            ->add('rut','text',array(
+                'label' => 'Rut'))
+            ->add('dv','text',array(
+                'label' => 'Dígito Verificador'))
+            ->add('direccion','text',array(
+                'label' => 'Dirección'))
+            ->add('telefono','text',array(
+                'label' => 'Telefono'))
+            ->add('celular','text',array(
+                'label' => 'Celular'))
+            ->add('mail','email',array(
+                'label' => 'E-mail'));
     }
 
     /**

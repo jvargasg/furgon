@@ -3,15 +3,12 @@
 {% block body -%}
     <h1>Apoderado list</h1>
 
-    <table class="records_list">
+    <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Nombres</th>
-                <th>Appaterno</th>
-                <th>Apmaterno</th>
+                <th>Nombre</th>
                 <th>Rut</th>
-                <th>Dv</th>
                 <th>Direccion</th>
                 <th>Telefono</th>
                 <th>Celular</th>
@@ -23,11 +20,8 @@
         {% for entity in entities %}
             <tr>
                 <td><a href="{{ path('apoderado_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>{{ entity.nombres }}</td>
-                <td>{{ entity.apPaterno }}</td>
-                <td>{{ entity.apMaterno }}</td>
-                <td>{{ entity.rut }}</td>
-                <td>{{ entity.dv }}</td>
+                <td>{{ entity.nombres }} {{ entity.apPaterno }} {{ entity.apMaterno }}</td>
+                <td>{{ entity.rut }}-{{ entity.dv }}</td>
                 <td>{{ entity.direccion }}</td>
                 <td>{{ entity.telefono }}</td>
                 <td>{{ entity.celular }}</td>
@@ -35,10 +29,10 @@
                 <td>
                 <ul>
                     <li>
-                        <a href="{{ path('apoderado_show', { 'id': entity.id }) }}">show</a>
+                        <a href="{{ path('apoderado_show', { 'id': entity.id }) }}">Ver detalles</a>
                     </li>
                     <li>
-                        <a href="{{ path('apoderado_edit', { 'id': entity.id }) }}">edit</a>
+                        <a href="{{ path('apoderado_edit', { 'id': entity.id }) }}">Editar</a>
                     </li>
                 </ul>
                 </td>
@@ -50,7 +44,7 @@
         <ul>
         <li>
             <a href="{{ path('apoderado_new') }}">
-                Create a new entry
+                Ingresar nuevo apoderado
             </a>
         </li>
     </ul>

@@ -1,20 +1,58 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1>Apoderado creation</h1>
+    <h1>Ingreso de nuevo Apoderado</h1>
 
-    <form action="{{ path('apoderado_create') }}" method="post" {{ form_enctype(form) }}>
-        {{ form_widget(form) }}
-        <p>
-            <button type="submit">Create</button>
-        </p>
+    <form class="form-vertical" action="{{ path('apoderado_create') }}" method="post" {{ form_enctype(form) }}>
+    
+        <div class="form-group">
+            <div class="col-md-3">{{ form_label(form.nombres) }}</div>
+            {{ form_errors(form.nombres) }}
+            <div class="col-md-8">{{ form_widget(form.nombres) }}</div>
+
+            <div class="col-md-3">{{ form_label(form.apPaterno) }}</div>
+            {{ form_errors(form.apPaterno) }}
+            <div class="col-md-8">{{ form_widget(form.apPaterno) }}</div>
+
+            <div class="col-md-3">{{ form_label(form.apMaterno) }}</div>
+            {{ form_errors(form.apMaterno) }}
+            <div class="col-md-8">{{ form_widget(form.apMaterno) }}</div>
+
+            <div class="col-md-3">{{ form_label(form.rut) }}</div>
+            {{ form_errors(form.rut) }}
+            <div class="col-md-8">{{ form_widget(form.rut) }}</div>
+
+            <div class="col-md-3">{{ form_label(form.dv) }}</div>
+            {{ form_errors(form.dv) }}
+            <div class="col-md-8">{{ form_widget(form.dv) }}</div>
+
+            <div class="col-md-3">{{ form_label(form.direccion) }}</div>
+            {{ form_errors(form.direccion) }}
+            <div class="col-md-8">{{ form_widget(form.direccion) }}</div>
+
+            <div class="col-md-3">{{ form_label(form.telefono) }}</div>
+            {{ form_errors(form.telefono) }}
+            <div class="col-md-8">{{ form_widget(form.telefono) }}</div>
+
+            <div class="col-md-3">{{ form_label(form.celular) }}</div>
+            {{ form_errors(form.celular) }}
+            <div class="col-md-8">{{ form_widget(form.celular) }}</div>
+
+            <div class="col-md-3">{{ form_label(form.mail) }}</div>
+            {{ form_errors(form.mail) }}
+            <div class="col-md-8">{{ form_widget(form.mail) }}</div>
+
+            <p class="col-md-3">
+                <button type="submit">Enviar</button>
+            </p>
+        </div>
     </form>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('apoderado') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('apoderado') }}">
+                Volver al listado
+            </a>
+        </li>
+    </ul>
 {% endblock %}
